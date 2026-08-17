@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>August 19 — A Little Universe</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     PRELOADER
+========================================================= -->
+
+<div id="preloader">
+
+    <canvas id="spaceCanvas"></canvas>
+
+    <div class="noise"></div>
+
+    <div class="preloader-center">
+
+        <div class="date-mark">
+            19 · 08 · 2026
+        </div>
+
+        <div class="loading-ring">
+            <span></span>
+        </div>
+
+        <p id="loadingText">
+            preparing something...
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MAIN EXPERIENCE
+========================================================= -->
+
+<main id="experience">
+
+    <!-- GLOBAL CANVASES -->
+
+    <canvas id="particleCanvas"></canvas>
+    <canvas id="fireworksCanvas"></canvas>
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav class="top-nav">
+
+        <div class="nav-logo">
+            <span>19</span>
+            <small>08</small>
+        </div>
+
+        <div class="nav-progress">
+            <span id="progressBar"></span>
+        </div>
+
+        <button
+            id="musicToggle"
+            class="music-button"
+            aria-label="Toggle music"
+        >
+            <span class="music-bars">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+            <small>MUSIC</small>
+        </button>
+
+    </nav>
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <section
+        id="intro"
+        class="screen intro-screen active-screen"
+    >
+
+        <div class="intro-aura"></div>
+
+        <div
+            class="floating-number"
+            data-depth="0.2"
+        >
+            19
+        </div>
+
+        <div class="intro-content">
+
+            <p class="micro-label">
+                AUGUST · 19 · 2026
+            </p>
+
+            <h1>
+                Some dates<br>
+                are more than<br>
+                dates.
+            </h1>
+
+            <div class="intro-line"></div>
+
+            <p class="intro-description">
+                And some people deserve<br>
+                something a little more thoughtful.
+            </p>
+
+            <button
+                id="beginButton"
+                class="cinematic-button"
+            >
+                <span>ENTER THE STORY</span>
+                <b>↗</b>
+            </button>
+
+        </div>
+
+        <div class="scroll-word">
+            SCROLL
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NAME REVEAL
+    ====================================================== -->
+
+    <section
+        id="reveal"
+        class="screen reveal-screen"
+    >
+
+        <div class="reveal-orb"></div>
+
+        <div class="reveal-content">
+
+            <p class="micro-label">
+                FOR YOU
+            </p>
+
+            <div
+                id="nameReveal"
+                class="name-reveal"
+            ></div>
+
+            <p
+                id="nameSub"
+                class="name-sub"
+            >
+                nineteen looks good on you.
+            </p>
+
+            <div class="nineteen">
+                <span>1</span>
+                <span>9</span>
+            </div>
+
+            <p class="reveal-date">
+                YOUR 19TH · 19 AUGUST 2026
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         COUNTDOWN
+    ====================================================== -->
+
+    <section
+        id="countdown"
+        class="screen countdown-screen"
+    >
+
+        <div class="section-number">
+            01
+        </div>
+
+        <div class="countdown-copy">
+
+            <p class="micro-label">
+                THE WAIT
+            </p>
+
+            <h2>
+                Before the<br>
+                clock strikes twelve.
+            </h2>
+
+            <p>
+                There's a little time left<br>
+                before your new chapter begins.
+            </p>
+
+        </div>
+
+        <div
+            id="countdown"
+            class="countdown"
+        >
+
+            <div class="time-unit">
+                <strong id="days">00</strong>
+                <span>DAYS</span>
+            </div>
+
+            <div class="time-divider">:</div>
+
+            <div class="time-unit">
+                <strong id="hours">00</strong>
+                <span>HOURS</span>
+            </div>
+
+            <div class="time-divider">:</div>
+
+            <div class="time-unit">
+                <strong id="minutes">00</strong>
+                <span>MINUTES</span>
+            </div>
+
+            <div class="time-divider">:</div>
+
+            <div class="time-unit">
+                <strong id="seconds">00</strong>
+                <span>SECONDS</span>
+            </div>
+
+        </div>
+
+        <div
+            id="birthdayLive"
+            class="birthday-live"
+        >
+
+            <span>THE CLOCK HAS SPOKEN</span>
+
+            <strong>
+                HAPPY 19TH
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MEMORY UNIVERSE
+    ====================================================== -->
+
+    <section
+        id="memories"
+        class="screen memory-screen"
+    >
+
+        <div class="memory-header">
+
+            <div class="section-number">
+                02
+            </div>
+
+            <div>
+
+                <p class="micro-label">
+                    MEMORY UNIVERSE
+                </p>
+
+                <h2>
+                    Some moments<br>
+                    refuse to disappear.
+                </h2>
+
+                <p>
+                    Move around. Touch a memory.<br>
+                    Let it come closer.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="memoryUniverse"
+            class="memory-universe"
+        >
+
+            <div class="universe-center">
+
+                <div class="center-ring"></div>
+
+                <span>
+                    MEMORIES
+                </span>
+
+            </div>
+
+
+            <!-- MEMORY 1 -->
+
+            <article
+                class="memory-card memory-1"
+                data-index="0"
+            >
+
+                <div class="memory-image">
+                    <img
+                        src="assets/photo1.jpg"
+                        alt="Memory"
+                    >
+                </div>
+
+                <div class="memory-info">
+                    <small>MEMORY 01</small>
+                    <span>A moment worth keeping.</span>
+                </div>
+
+            </article>
+
+
+            <!-- MEMORY 2 -->
+
+            <article
+                class="memory-card memory-2"
+                data-index="1"
+            >
+
+                <div class="memory-image">
+                    <img
+                        src="assets/photo2.jpg"
+                        alt="Memory"
+                    >
+                </div>
+
+                <div class="memory-info">
+                    <small>MEMORY 02</small>
+                    <span>Somewhere in between.</span>
+                </div>
+
+            </article>
+
+
+            <!-- MEMORY 3 -->
+
+            <article
+                class="memory-card memory-3"
+                data-index="2"
+            >
+
+                <div class="memory-image">
+                    <img
+                        src="assets/photo3.jpg"
+                        alt="Memory"
+                    >
+                </div>
+
+                <div class="memory-info">
+                    <small>MEMORY 03</small>
+                    <span>One for the memory box.</span>
+                </div>
+
+            </article>
+
+
+            <!-- MEMORY 4 -->
+
+            <article
+                class="memory-card memory-4"
+                data-index="3"
+            >
+
+                <div class="memory-image">
+                    <img
+                        src="assets/photo4.jpg"
+                        alt="Memory"
+                    >
+                </div>
+
+                <div class="memory-info">
+                    <small>MEMORY 04</small>
+                    <span>A chapter of its own.</span>
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="memory-hint">
+            DRAG · MOVE · EXPLORE
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STORY CHAPTERS
+    ====================================================== -->
+
+    <section
+        id="story"
+        class="screen story-screen"
+    >
+
+        <div class="story-background"></div>
+
+        <div class="story-side">
+
+            <span class="section-number">
+                03
+            </span>
+
+            <span class="vertical-text">
+                THE STORY
+            </span>
+
+        </div>
+
+
+        <div class="chapter chapter-active">
+
+            <div class="chapter-number">
+                CHAPTER I
+            </div>
+
+            <h2>
+                Before it became<br>
+                a memory.
+            </h2>
+
+            <p>
+                Every story starts somewhere.
+                Sometimes you don't realize
+                a moment is important until
+                much later.
+            </p>
+
+            <span class="chapter-year">
+                THE BEGINNING
+            </span>
+
+        </div>
+
+
+        <div class="chapter">
+
+            <div class="chapter-number">
+                CHAPTER II
+            </div>
+
+            <h2>
+                The little things<br>
+                became everything.
+            </h2>
+
+            <p>
+                Random conversations.
+                Terrible jokes.
+                Unexpected moments.
+                The things nobody plans,
+                yet somehow remembers.
+            </p>
+
+            <span class="chapter-year">
+                SOMEWHERE ALONG THE WAY
+            </span>
+
+        </div>
+
+
+        <div class="chapter">
+
+            <div class="chapter-number">
+                CHAPTER III
+            </div>
+
+            <h2>
+                Some chapters<br>
+                simply stay with us.
+            </h2>
+
+            <p>
+                Not everything has to last forever
+                to have mattered.
+                Some people become part of a story
+                without needing to remain in every page.
+            </p>
+
+            <span class="chapter-year">
+                WHAT REMAINS
+            </span>
+
+        </div>
+
+
+        <div class="chapter-controls">
+
+            <button id="previousChapter">
+                ←
+            </button>
+
+            <span>
+                <b id="chapterCurrent">01</b>
+                /
+                03
+            </span>
+
+            <button id="nextChapter">
+                →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LETTER
+    ====================================================== -->
+
+    <section
+        id="letterSection"
+        class="screen letter-screen"
+    >
+
+        <div class="section-number">
+            04
+        </div>
+
+        <div class="letter-heading">
+
+            <p class="micro-label">
+                A FEW WORDS
+            </p>
+
+            <h2>
+                Something<br>
+                I wanted to say.
+            </h2>
+
+        </div>
+
+
+        <div
+            id="envelope"
+            class="envelope"
+        >
+
+            <div class="envelope-inside"></div>
+
+            <div class="letter-paper">
+
+                <span class="letter-date">
+                    19 · 08 · 2026
+                </span>
+
+                <h3>
+                    Hey you,
+                </h3>
+
+                <p>
+                    Happy 19th birthday.
+                </p>
+
+                <p>
+                    I hope this year brings you
+                    the kind of happiness that arrives
+                    unexpectedly — the kind that makes
+                    ordinary days feel special.
+                </p>
+
+                <p>
+                    We've shared a chapter of each
+                    other's lives, and no matter where
+                    life takes us, there are memories
+                    that deserve to be remembered
+                    simply because they were real.
+                </p>
+
+                <p>
+                    So today, forget everything else
+                    for a while. Enjoy your day.
+                    Laugh a little louder.
+                    Make some beautiful memories.
+                </p>
+
+                <p>
+                    And most importantly,
+                    keep becoming the person
+                    you're meant to be.
+                </p>
+
+                <div class="signature">
+                    — someone who remembers
+                </div>
+
+            </div>
+
+
+            <div class="envelope-back"></div>
+
+            <div class="envelope-flap"></div>
+
+            <div class="wax-seal">
+                <span>✦</span>
+            </div>
+
+        </div>
+
+
+        <button
+            id="openEnvelope"
+            class="minimal-button"
+        >
+            OPEN LETTER
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         THINGS I REMEMBER
+    ====================================================== -->
+
+    <section
+        id="remember"
+        class="screen remember-screen"
+    >
+
+        <div class="section-number">
+            05
+        </div>
+
+        <div class="remember-heading">
+
+            <p class="micro-label">
+                THE LITTLE THINGS
+            </p>
+
+            <h2>
+                Things I’ll<br>
+                always remember.
+            </h2>
+
+        </div>
+
+
+        <div
+            id="memoryWords"
+            class="memory-words"
+        >
+
+            <button
+                data-message="The random conversations that somehow lasted much longer than they were supposed to."
+                style="--x: 13%; --y: 25%;"
+            >
+                conversations
+            </button>
+
+            <button
+                data-message="The laughs that appeared at the most ridiculous moments."
+                style="--x: 68%; --y: 18%;"
+            >
+                laughter
+            </button>
+
+            <button
+                data-message="The little things you probably never realized I noticed."
+                style="--x: 28%; --y: 66%;"
+            >
+                little things
+            </button>
+
+            <button
+                data-message="The version of us that existed in that particular chapter."
+                style="--x: 74%; --y: 63%;"
+            >
+                that chapter
+            </button>
+
+            <button
+                data-message="Certain moments simply become part of your memory."
+                style="--x: 48%; --y: 40%;"
+            >
+                moments
+            </button>
+
+        </div>
+
+
+        <div
+            id="memoryMessage"
+            class="memory-message"
+        >
+
+            <span>TOUCH A WORD</span>
+
+            <p>
+                There's usually more behind it.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         GIFT
+    ====================================================== -->
+
+    <section
+        id="gift"
+        class="screen gift-screen"
+    >
+
+        <div class="gift-aura"></div>
+
+        <div class="section-number">
+            06
+        </div>
+
+        <div class="gift-heading">
+
+            <p class="micro-label">
+                ONE LAST THING
+            </p>
+
+            <h2>
+                You made it<br>
+                this far.
+            </h2>
+
+            <p>
+                So I left one more thing.
+            </p>
+
+        </div>
+
+
+        <div
+            id="giftBox"
+            class="gift-box"
+        >
+
+            <div class="gift-lid">
+
+                <div class="gift-ribbon"></div>
+
+                <div class="bow">
+                    <i></i>
+                    <i></i>
+                </div>
+
+            </div>
+
+            <div class="gift-body">
+
+                <div class="gift-ribbon"></div>
+
+                <div class="gift-shine"></div>
+
+            </div>
+
+        </div>
+
+
+        <p
+            id="giftHint"
+            class="gift-hint"
+        >
+            TAP TO OPEN
+        </p>
+
+
+        <div
+            id="giftReveal"
+            class="gift-reveal"
+        >
+
+            <span>
+                A NEW CHAPTER
+            </span>
+
+            <h3>
+                19
+            </h3>
+
+            <p>
+                May it be your best one yet.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FINAL
+    ====================================================== -->
+
+    <section
+        id="final"
+        class="screen final-screen"
+    >
+
+        <div class="final-stars"></div>
+
+        <div class="final-content">
+
+            <p class="micro-label">
+                AND NOW
+            </p>
+
+            <h2>
+                Make a wish.
+            </h2>
+
+            <p class="final-copy">
+                Close your eyes.<br>
+                Think of something you want.<br>
+                Don't tell anyone.
+            </p>
+
+            <button
+                id="wishButton"
+                class="cinematic-button"
+            >
+                <span>MAKE THE WISH</span>
+                <b>✦</b>
+            </button>
+
+            <div
+                id="wishResult"
+                class="wish-result"
+            >
+
+                <span>
+                    WISH SENT INTO THE UNIVERSE
+                </span>
+
+                <h3>
+                    Happy 19th Birthday.
+                </h3>
+
+                <p>
+                    May life surprise you beautifully.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MIDNIGHT OVERLAY
+    ====================================================== -->
+
+    <div
+        id="midnight"
+        class="midnight"
+    >
+
+        <div class="midnight-content">
+
+            <span>
+                00 : 00 : 00
+            </span>
+
+            <h2>
+                HAPPY<br>
+                19TH
+            </h2>
+
+            <p>
+                Your new chapter starts now.
+            </p>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+     AUDIO
+========================================================= -->
+
+<audio
+    id="backgroundMusic"
+    loop
+    preload="auto"
+>
+    <source
+        src="assets/birthday.mp3"
+        type="audio/mpeg"
+    >
+</audio>
+
+
+<script src="script.js"></script>
+
+</body>
+  </html>
