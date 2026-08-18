@@ -56,30 +56,65 @@ function countdown(){
 setInterval(countdown,1000);countdown();
 
 
-// Multiple cinematic memory cards: every video has its own Play/Pause button.
+// Multiple cinematic memory cards
 document.querySelectorAll(".memory-video").forEach(card => {
   const video = card.querySelector("video");
   const button = card.querySelector(".video-play");
 
+  let hideTimer;
+
+  function showButtonTemporarily() {
+    card.classList.add("show-control");
+
+    clearTimeout(hideTimer);
+
+    if (!video.paused && !video.ended) {
+      hideTimer = setTimeout(() => {
+        card.classList.remove("show-control");
+      }, 1200);
+    }
+  }
+
   button.addEventListener("click", (e) => {
     e.stopPropagation();
-    if (video.ended) video.currentTime = 0;
-    if (video.paused) video.play().catch(()=>{});
-    else video.pause();
+
+    if (video.ended) {
+      video.currentTime = 0;
+      video.play();
+      return;
+    }
+
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
   });
 
   video.addEventListener("play", () => {
     button.textContent = "Ⅱ";
-    button.setAttribute("aria-label","Pause video");
+    card.classList.add("playing");
+
+    setTimeout(() => {
+      card.classList.remove("show-control");
+    }, 500);
   });
 
   video.addEventListener("pause", () => {
     button.textContent = "▶";
-    button.setAttribute("aria-label","Play video");
+    card.classList.remove("playing");
+    card.classList.add("show-control");
   });
 
   video.addEventListener("ended", () => {
     button.textContent = "↻";
-    button.setAttribute("aria-label","Replay video");
+    card.classList.remove("playing");
+    card.classList.add("show-control");
+  });
+
+  video.addEventListener("click", () => {
+    if (!video.paused) {
+      showButtonTemporarily();
+    }
   });
 });
