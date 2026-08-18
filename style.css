@@ -166,3 +166,48 @@
   .video-play{width:58px;height:58px}
   .video-card-caption{font-size:22px;padding-top:12px}
 }
+/* MOBILE LETTER FIX */
+
+@media (max-width:700px){
+
+  .sealed-letter{
+    width:calc(100vw - 32px);
+    height:300px;
+  }
+
+  .letter-paper{
+    left:4%;
+    right:4%;
+    top:5%;
+    height:90%;
+    max-height:270px;
+    padding:28px 24px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    box-sizing:border-box;
+    scrollbar-width:none;
+  }
+
+  .letter-paper::-webkit-scrollbar{
+    display:none;
+  }
+
+  .letter-paper h3{
+    font-size:32px;
+    line-height:.95;
+    margin:14px 0 20px;
+  }
+
+  .letter-paper p{
+    font-size:12px;
+    line-height:1.65;
+  }
+
+  .letter-paper .script{
+    font-size:25px;
+  }
+
+  .sealed-letter.open .letter-paper{
+    transform:translateY(-35px) rotate(-1deg);
+  }
+    }
