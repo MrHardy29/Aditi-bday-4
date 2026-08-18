@@ -211,3 +211,140 @@
     transform:translateY(-35px) rotate(-1deg);
   }
     }
+/* BIRTHDAY CAKE */
+
+.birthday-cake {
+  position: relative;
+  width: 280px;
+  height: 230px;
+  margin: 70px auto 40px;
+  cursor: pointer;
+}
+
+.cake-body {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 240px;
+  height: 110px;
+  border-radius: 15px 15px 25px 25px;
+  background: linear-gradient(180deg, #b83268, #71143d);
+  box-shadow: 0 20px 50px rgba(180, 50, 100, .25);
+}
+
+.cake-top {
+  position: absolute;
+  bottom: 85px;
+  left: 10px;
+  width: 260px;
+  height: 55px;
+  border-radius: 50%;
+  background: #d85b88;
+  box-shadow: 0 8px 20px rgba(0,0,0,.3);
+}
+
+/* Candles */
+
+.candles {
+  position: absolute;
+  z-index: 5;
+  bottom: 125px;
+  left: 35px;
+  width: 210px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.candle {
+  position: relative;
+  width: 22px;
+  height: 70px;
+}
+
+.candle-body {
+  position: absolute;
+  bottom: 0;
+  width: 22px;
+  height: 55px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    #e7b86a,
+    #fff0bd,
+    #c99542
+  );
+}
+
+.flame {
+  position: absolute;
+  z-index: 10;
+  top: -18px;
+  left: 6px;
+  width: 11px;
+  height: 18px;
+  border-radius: 50% 50% 50% 50%;
+  background: #ffd36a;
+  box-shadow:
+    0 0 8px #ffd36a,
+    0 0 20px #f5a623,
+    0 0 35px rgba(245,166,35,.7);
+  animation: flicker .15s infinite alternate;
+  transform-origin: bottom;
+}
+
+@keyframes flicker {
+  from {
+    transform: scale(1) rotate(-2deg);
+  }
+  to {
+    transform: scale(.85) rotate(3deg);
+  }
+}
+
+/* When candles are blown */
+
+.birthday-cake.blown .flame {
+  animation: blowOut .45s forwards;
+}
+
+@keyframes blowOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  60% {
+    opacity: .6;
+    transform: translateX(12px) scale(.7);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(25px) scale(0);
+  }
+}
+
+/* Little smoke effect */
+
+.birthday-cake.blown .candle::after {
+  content: "〰";
+  position: absolute;
+  top: -35px;
+  left: 4px;
+  color: rgba(220,220,220,.65);
+  font-size: 22px;
+  animation: smoke 2s ease-out forwards;
+}
+
+@keyframes smoke {
+  0% {
+    opacity: .7;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-35px);
+  }
+  }
