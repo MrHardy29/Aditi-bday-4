@@ -18,8 +18,39 @@ const letter=document.getElementById("letter");
 letter.onclick=e=>{ if(!e.target.classList.contains("close-letter")) letter.classList.toggle("open") };
 document.querySelector(".close-letter").onclick=e=>{e.stopPropagation();letter.classList.remove("open")};
 
-const gift=document.getElementById("gift"), msg=document.getElementById("giftMessage");
-gift.onclick=()=>{gift.classList.add("open");setTimeout(()=>msg.classList.add("show"),500);setTimeout(fireworks,850)};
+const cake = document.getElementById("cake");
+const wishMessage = document.getElementById("wishMessage");
+const birthdaySong = document.getElementById("birthdaySong");
+
+cake.onclick = () => {
+  cake.classList.add("blown");
+
+  setTimeout(() => {
+    wishMessage.classList.add("show");
+  }, 700);
+
+  music.pause();
+
+  birthdaySong.currentTime = 0;
+  birthdaySong.volume = 0;
+
+  birthdaySong.play().then(() => {
+    let volume = 0;
+
+    const fadeIn = setInterval(() => {
+      volume += 0.05;
+      birthdaySong.volume = Math.min(volume, 0.75);
+
+      if (volume >= 0.75) {
+        clearInterval(fadeIn);
+      }
+    }, 100);
+  }).catch(error => {
+    console.log("Birthday song could not play:", error);
+  });
+
+  setTimeout(fireworks, 1200);
+};
 
 const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.12});
 document.querySelectorAll(".reveal").forEach(x=>observer.observe(x));
